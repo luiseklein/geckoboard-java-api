@@ -18,7 +18,7 @@ public class MapTest {
         widget.addCityPoint("test1");
         widget.addCityPoint("test2", "CA").setColor(Color.RED);
         widget.addCityPoint("test3", "BE", "NL").setSize(1);
-        widget.addHostPoint("localhost");
+        widget.addHostPoint("localhost").setColor(new Color(255,0,0,51));
         widget.addIpPoint("192.168.0.1");
         widget.addLatLonPoint("51.526263", "-0.092429");
 
@@ -36,7 +36,8 @@ public class MapTest {
         Assert.assertEquals("test1", point.get(0).get("city").get("city_name").asText());
         Assert.assertNull(point.get(0).get("city").get("region_name"));
         Assert.assertNull(point.get(0).get("city").get("country_name"));
-
+        Assert.assertEquals("FF0000", point.get(1).get("color").asText());
+        Assert.assertEquals("rgba(255,0,0,0.20)", point.get(3).get("color").asText());
     }
 
 }
