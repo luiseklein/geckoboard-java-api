@@ -54,7 +54,7 @@ public class LineChartTest {
         Assert.assertEquals("4", node.get("settings").get("axisy").get(3).asText());
         Assert.assertEquals("5", node.get("settings").get("axisy").get(4).asText());
 
-        Assert.assertEquals("FF0000FF", node.get("settings").get("colour").asText());
+        Assert.assertEquals("FF0000", node.get("settings").get("colour").asText());
     }
 
     @Test(expected = ValidationException.class)

@@ -2,6 +2,7 @@ package nl.pvanassen.geckoboard.api.gson;
 
 import java.awt.Color;
 import java.io.IOException;
+import java.util.Locale;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
@@ -26,7 +27,13 @@ class AwtColorTypeAdapter extends TypeAdapter<Color> {
             out.nullValue();
             return;
         }
-        String colorStr = String.format("%06X%02X", 0xFFFFFF & color.getRGB(), 0xFF & color.getAlpha());
+        String colorStr;
+        if (color.getAlpha() == 255) {
+            colorStr = String.format("%06X", 0xFFFFFF & color.getRGB());
+        }
+        else {
+            colorStr = String.format(Locale.ENGLISH,"rgba(%d,%d,%d,%.2f)", color.getRed(), color.getGreen(), color.getBlue(), (float)color.getAlpha()/255);
+        }
         out.value(colorStr);
     }
 }

@@ -29,19 +29,19 @@ public class PieChartTest {
         Assert.assertEquals(4, node.get("item").size());
         Assert.assertEquals("Test1", node.get("item").get(0).get("label").asText());
         Assert.assertEquals("100", node.get("item").get(0).get("value").asText());
-        Assert.assertEquals("FF0000FF", node.get("item").get(0).get("color").asText());
+        Assert.assertEquals("FF0000", node.get("item").get(0).get("color").asText());
 
         Assert.assertEquals("Test2", node.get("item").get(1).get("label").asText());
         Assert.assertEquals("200", node.get("item").get(1).get("value").asText());
-        Assert.assertEquals("00FF00FF", node.get("item").get(1).get("color").asText());
+        Assert.assertEquals("00FF00", node.get("item").get(1).get("color").asText());
 
         Assert.assertEquals("Test3", node.get("item").get(2).get("label").asText());
         Assert.assertEquals("300", node.get("item").get(2).get("value").asText());
-        Assert.assertEquals("0000FFFF", node.get("item").get(2).get("color").asText());
+        Assert.assertEquals("0000FF", node.get("item").get(2).get("color").asText());
 
         Assert.assertEquals("Test4", node.get("item").get(3).get("label").asText());
         Assert.assertEquals("400", node.get("item").get(3).get("value").asText());
-        Assert.assertEquals("FFFFFFFF", node.get("item").get(3).get("color").asText());
+        Assert.assertEquals("FFFFFF", node.get("item").get(3).get("color").asText());
     }
 
 }
